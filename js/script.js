@@ -174,7 +174,7 @@ const createCardTemplate = (card) => {
   }
 
   const cardTemplate = `
-  <ul class="card border">
+  <ul class="card">
   <li>Id:${card.id}</li>
   <li>Nome:${card.name}</li>
   <li>Costo lancio:${card.launchCost.join(", ")}</li>
@@ -233,10 +233,12 @@ const inputField = document.getElementById("search");
 const selectField = document.getElementById("filter");
 const button = document.getElementById("button");
 
-// intecetto cambiamento
+// intercetto cambiamento
 selectField.addEventListener("change", () => {
-  const currentValue = selectField.nodeValue;
-  if (currentValue != "all") inputField.classList.add = "hidden";
+  const currentValue = selectField.Value;
+  if (currentValue == "all") {
+    inputField.classList.add = "hidden";
+  }
 });
 
 button.addEventListener("click", () => {
@@ -250,9 +252,9 @@ button.addEventListener("click", () => {
   const filteredDeck = [];
   for (i = 0; i < fullDeck.length; i++) {
     const currentCard = fullDeck[i];
-    if (currentCard[selectValue] == inputValue) {
-      filteredDeck.push(currentCard);
-    }
+    // if (currentCard[selectValue] == inputValue) {
+    //   filteredDeck.push(currentCard);
+    // }
 
     switch (selectValue) {
       case "id":
