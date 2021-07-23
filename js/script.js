@@ -19,7 +19,6 @@ testo : abilità
          costo specifico:
                 tipo
                 numero
-
          testo di colore(umorismo)
 info artista
 numero di collezione
@@ -88,38 +87,38 @@ if (card.abilities.length) {
 }
 
 let cardTemplate = `
-<ul class="card">
-<li>Id:${card.id}</li>
-<li>Nome:${card.name}</li>
-<li>Costo lancio:${card.launchCost.join(", ")}</li>
-<li>Costo mana convertito:${card.conbinedManaCost}</li>
-<li>Tipo carta:${card.cardType} ${subType}</li>
-<li>Espansione:
+  <ul class="card">
+  <li>Id:${card.id}</li>
+  <li>Nome:${card.name}</li>
+  <li>Costo lancio:${card.launchCost.join(", ")}</li>
+  <li>Costo mana convertito:${card.conbinedManaCost}</li>
+  <li>Tipo carta:${card.cardType} ${subType}</li>
+  <li>Espansione:
+    <ul>
+      <li> Ristampa:${card.expanxion.reprintId}</li>
+      <li> Nome:${card.expanxion.name}</li>
+      <li> Rarità:${card.expanxion.rarity}</li>
+      <li> Numero di collezione:${card.expanxion.collectionNr}</li>
+     </ul>
+  </li>
+  <li> Testo di colore: ${card.flavorText.quote} - ${card.flavorText.autor}</li>
+  <li> Abilità:${abilitiesContent} </li>
+  <li> Costituzione:${card.costitution} </li>
+  <li> Forza:${card.strength} </li>
+  <li> Colore di bordo:${card.borderColor} </li>
+  <li> Illustrazione:
   <ul>
-    <li> Ristampa:${card.expanxion.reprintId}</li>
-    <li> Nome:${card.expanxion.name}</li>
-    <li> Rarità:${card.expanxion.rarity}</li>
-    <li> Numero di collezione:${card.expanxion.collectionNr}</li>
-   </ul>
-</li>
-<li> Testo di colore: ${card.flavorText.quote} - ${card.flavorText.autor}</li>
-<li> Abilità:${abilitiesContent} </li>
-<li> Costituzione:${card.costitution} </li>
-<li> Forza:${card.strength} </li>
-<li> Colore di bordo:${card.borderColor} </li>
-<li> Illustrazione:
-<ul>
- <li>Autore:${card.illustration.author.name}</li>
- <li>ID:${card.illustration.author.id}</li>
- <li>Immagine:${card.illustration.source}</li>
-</ul>
-<li> Background:
-<ul>
- <li>Colore di sfondo :${card.background.color}</li>
- <li>Immagine:${card.background.source}</li>
-</ul>
-</li>
-</ul>
-`;
+   <li>Autore:${card.illustration.author.name}</li>
+   <li>ID:${card.illustration.author.id}</li>
+   <li>Immagine:${card.illustration.source}</li>
+  </ul>
+  <li> Background:
+  <ul>
+   <li>Colore di sfondo :${card.background.color}</li>
+   <li>Immagine:${card.background.source}</li>
+  </ul>
+  </li>
+  </ul>
+  `;
 
 cardSection.innerHTML = cardTemplate;
