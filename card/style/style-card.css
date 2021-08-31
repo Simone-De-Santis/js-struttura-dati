@@ -1,0 +1,9 @@
+.my-border {
+  border: 1px solid black;
+  height: 500px;
+}
+
+.border-master {
+  border: 20px solid black;
+  border-radius: 20px;
+}
